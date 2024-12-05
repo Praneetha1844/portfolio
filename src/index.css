@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Add custom global styles */
+/* Add this to your index.css or App.css file */
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+
+.amatic-heading {
+  font-family: 'Amatic SC', cursive;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+h1, h2, h3, h4 {
+  font-family: 'Amatic SC', sans-serif; 
+  font-color:'Black'/* Or your preferred font */
+}
+
+/* Apply global padding for body content */
+section {
+  padding: 50px 10%;
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff4e00;
+}
+/* Parallax Effect */
+
+
+/* For smooth scrolling */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

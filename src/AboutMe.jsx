@@ -2,7 +2,7 @@ import React from 'react';
 
 function AboutMe() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-[#c5a2f7] to-[#a879eb] text-black flex flex-col justify-center items-center px-6">
+    <div className="min-h-screen bg-gradient-to-b from-[#000000] via-[#9b9b9b] to-[#000000] text-black flex flex-col justify-center items-center px-6">
       <h1 className="text-4xl font-bold mb-6">About Me</h1>
       <p className="text-lg leading-relaxed max-w-3xl text-center">
         Hi! I'm Praneetha Potharaju, a passionate developer of code,logic and just the right amout of magic. 

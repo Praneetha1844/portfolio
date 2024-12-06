@@ -6,10 +6,13 @@ import AboutMe from './AboutMe';
 import Contact from './Contact';
 import Games from './Games';
 import Blog from './Blog';
+import MouseEffect from './MouseEffect';
 
 function App() {
   return (
+    
     <Router>
+      <MouseEffect />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/projects" element={<Projects />} />
@@ -20,6 +23,7 @@ function App() {
         
       </Routes>
     </Router>
+    
   );
 }
 

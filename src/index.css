@@ -7,17 +7,17 @@
 /* Optional: Add custom global styles */
 /* Add this to your index.css or App.css file */
 @import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
 
 .amatic-heading {
-  font-family: 'Amatic SC', cursive;
+  font-family: 'QuickSand', cursive;
 }
 
 
 
 h1, h2, h3, h4 {
-  font-family: 'Amatic SC', sans-serif; 
+  font-family: 'QuickSand', sans-serif; 
 }
 
 /* Apply global padding for body content */
@@ -49,3 +49,50 @@ button:hover {
 }
 /* Add this to your global styles */
 
+/* Add these styles for the scroll animation */
+.block {
+  opacity: 0;
+  transform: translateY(50px); /* Start the element below the viewport */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.block.animate {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to original position */
+}
+
+/* Optional: Set a custom threshold for the scroll trigger */
+.intersecting {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Ensure the cards are aligned in 2 columns */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+  gap: 2rem; /* Space between cards */
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Apply responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .project-container {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+}
+
+/* Styles for the project card (still hidden initially) */
+.project-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  width:50%;
+
+}
+
+/* When the card is in view, this class is added */
+.project-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}

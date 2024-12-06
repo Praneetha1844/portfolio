@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const projectsData = [
   {
@@ -23,24 +23,47 @@ const projectsData = [
   },
 ];
 
-function Projects() {
+const Projects = () => {
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    // Intersection Observer setup
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate'); // Apply animation class
+        } else {
+          entry.target.classList.remove('animate'); // Remove animation class
+        }
+      });
+    }, { threshold: 0.2 }); // Trigger when 20% of the element is visible
+
+    // Observe each card in the projects list
+    cardsRef.current.forEach((card) => observer.observe(card));
+
+    return () => {
+      cardsRef.current.forEach((card) => observer.unobserve(card)); // Cleanup observer on component unmount
+    };
+  }, []);
+
   return (
-    <div className="w-full min-h-screen bg-gray-900 flex flex-col items-center py-10">
-      <h1 className="text-4xl font-bold text-white mb-10">My Projects</h1>
-      <div className="w-full overflow-x-auto flex space-x-8 px-6 max-w-7xl">
+    <div className="w-full min-h-screen bg-black py-10 px-4">
+      <h1 className="text-4xl font-bold text-white mb-10 text-center">My Projects</h1>
+      <div className="container mx-auto flex flex-wrap justify-center gap-20">
         {projectsData.map((project, index) => (
           <a
             key={index}
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative w-full max-w-xs bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transform transition-all hover:scale-105 flex-shrink-0"
+            className="group relative bg-white p-6 w-[220px] sm:w-[240px] md:w-[260px] lg:w-[280px] xl:w-[300px] rounded-xl shadow-xl hover:shadow-2xl project-card"
+            ref={(el) => cardsRef.current[index] = el} // Store reference to each card
           >
-            <div className="flex flex-col justify-between h-[320px]">
+            <div className="flex flex-col justify-between h-[250px]">
               <h2 className="text-xl font-semibold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors">
                 {project.title}
               </h2>
-              <p className="text-sm text-gray-600 mb-4 flex-grow overflow-hidden text-ellipsis">
+              <p className="text-sm text-gray-600 mb-4 description">
                 {project.description}
               </p>
               <div className="text-right">

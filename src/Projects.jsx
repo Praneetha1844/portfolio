@@ -27,7 +27,7 @@ function Projects() {
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-black via-gray-800 to-gray-900 flex flex-col items-center py-10">
       <h1 className="text-3xl font-bold text-white mb-10">My Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 max-w-7xl">
+      <div className="w-full overflow-x-auto flex space-x-6 px-6 max-w-7xl">
         {projectsData.map((project, index) => (
           <a
             key={index}

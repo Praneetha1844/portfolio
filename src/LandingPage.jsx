@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Projects from './Projects';
 import AboutMe from './AboutMe';
 import { Link } from 'react-scroll';
 
 function LandingPage() {
+  const [scrollY, setScrollY] = useState(0);
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY); // Update scroll position
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Calculate zoom effect
+  const zoomEffect = 1 + scrollY * 0.001; // Adjust the multiplier for desired zoom speed
+
   return (
     <div className="relative">
       {/* Video Background */}
@@ -14,6 +33,10 @@ function LandingPage() {
           autoPlay
           loop
           muted
+          style={{
+            transform: `scale(${zoomEffect})`,
+            transition: 'transform 0.1s ease-out', // Smooth transition for zoom effect
+          }}
         ></video>
 
         {/* Overlay Content */}

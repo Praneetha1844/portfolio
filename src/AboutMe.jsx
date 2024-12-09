@@ -3,18 +3,17 @@ import React from 'react';
 function AboutMe() {
   return (
     <div
-      className="min-h-screen text-black flex flex-row  bg-black justify-between items-center px-4"
+      className="min-h-screen text-black flex flex-col lg:flex-row bg-black justify-between items-center px-4"
       style={{
-        // Replace 'your-image.jpg' with your actual background image file name
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
     >
       {/* Left Content */}
-      <div className="max-w-lg text-left ml-64">
+      <div className="max-w-lg text-left mx-auto lg:ml-64 lg:mr-0">
         {/* Centered Heading */}
-        <h1 className="text-4xl font-bold mb-6 text-white text-center">About Me</h1>
+        <h1 className="text-4xl font-bold mb-6 text-white text-center lg:text-left">About Me</h1>
 
         {/* Left-Aligned Paragraphs */}
         <p className="text-lg leading-relaxed text-white">
@@ -28,20 +27,20 @@ function AboutMe() {
         </p>
 
         {/* Social Media Buttons */}
-        <div className="mt-10 flex space-x-12 justify-center ">
+        <div className="mt-10 flex flex-col sm:flex-row sm:space-x-4 justify-center lg:justify-start">
           <a
             href="https://linkedin.com/in/praneetha-potharaju"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold border border-white hover:bg-white hover:text-black"
-            >         
+            className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold border border-white hover:bg-white hover:text-black mb-4 sm:mb-0"
+          >
             LinkedIn
           </a>
           <a
             href="https://www.instagram.com/yourprofile"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold border border-white hover:bg-white hover:text-black"
+            className="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold border border-white hover:bg-white hover:text-black mb-4 sm:mb-0"
           >
             Instagram
           </a>
@@ -57,11 +56,11 @@ function AboutMe() {
       </div>
 
       {/* Right Photo */}
-      <div className="w-1/4 flex justify-center items-center mr-40">
+      <div className="w-full lg:w-1/4 flex justify-center items-center mt-8 lg:mt-0 lg:mr-64">
         <img
-          src="/doi.jpg" // Replace 'your-photo.jpg' with the actual filename of your photo
+          src="/doi.jpg"
           alt="Praneetha Potharaju"
-          className="rounded-full object-cover shadow-lg"
+          className="rounded-full object-cover shadow-lg w-48 h-48 lg:w-64 lg:h-64"
         />
       </div>
     </div>

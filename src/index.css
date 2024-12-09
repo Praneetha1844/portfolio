@@ -29,9 +29,7 @@ button {
   transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #ff4e00;
-}
+
 /* Parallax Effect */
 
 
@@ -95,15 +93,6 @@ button:hover {
 .project-card.animate {
   opacity: 1;
   transform: translateY(0);
-}
-canvas {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Behind the text */
-  width: 100%;
-  height: 100%;
 }
 
 

@@ -56,7 +56,7 @@ function AboutMe() {
       </div>
 
       {/* Right Photo */}
-      <div className="w-full lg:w-1/4 flex justify-center items-center mt-8 lg:mt-0 lg:mr-64">
+      <div className="w-full lg:w-1/ flex justify-center items-center mt-8 lg:mt-0 lg:mr-64">
         <img
           src="/doi.jpg"
           alt="Praneetha Potharaju"

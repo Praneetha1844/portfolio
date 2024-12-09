@@ -2,22 +2,22 @@ import React, { useEffect, useRef } from 'react';
 
 const projectsData = [
   {
-    title: 'Project One',
+    title: 'WasteWhizIBM',
     description: 'WasteWhizIBM is a data science project that uses machine learning and data analysis to improve marketing efficiency by optimizing customer targeting and decision-making.',
     githubLink: 'https://github.com/smartinternz02/SBSPS-Challenge-10787-wastewhiz-Data-Science-enabled-Marketing-Efficiency-Enhancement',
   },
   {
-    title: 'Project Two',
+    title: 'Flappy Bird Game',
     description: 'The Flappy Bird game in Python, built with Pygame, replicates the classic arcade game where players control a bird to avoid obstacles.',
     githubLink: 'https://github.com/Praneetha1844/flappy',
   },
   {
-    title: 'Project Three',
+    title: 'Handwritten Character Detection',
     description: 'Handwritten character detection using neural networks involves training deep learning models like Convolutional Neural Networks (CNNs) to classify and recognize handwritten characters.',
     githubLink: 'https://github.com/Praneetha1844/CodeAlpha_HandwrittenCharacter_Detection',
   },
   {
-    title: 'Project Four',
+    title: 'Calculator',
     description: 'A Java-based calculator project provides a user-friendly interface to perform basic arithmetic operations.',
     githubLink: 'https://github.com/Praneetha1844/Calci',
   },
@@ -39,10 +39,18 @@ const Projects = () => {
     }, { threshold: 0.2 }); // Trigger when 20% of the element is visible
 
     // Observe each card in the projects list
-    cardsRef.current.forEach((card) => observer.observe(card));
+    cardsRef.current.forEach((card) => {
+      if (card) {
+        observer.observe(card);
+      }
+    });
 
     return () => {
-      cardsRef.current.forEach((card) => observer.unobserve(card)); // Cleanup observer on component unmount
+      cardsRef.current.forEach((card) => {
+        if (card) {
+          observer.unobserve(card); // Cleanup observer on component unmount
+        }
+      });
     };
   }, []);
 

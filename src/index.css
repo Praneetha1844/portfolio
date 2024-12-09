@@ -94,5 +94,64 @@ button {
   opacity: 1;
   transform: translateY(0);
 }
+.game1-container {
+  background-color: #f4f4f4;
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.game-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.canvas-container {
+  margin-bottom: 20px;
+}
+
+canvas {
+  border: 5px solid black; /* Add this line to create a black border */
+  cursor: crosshair;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.color-picker, .brush-size {
+  display: flex;
+  align-items: center;
+}
+
+input[type="color"] {
+  margin-left: 10px;
+}
+
+input[type="range"] {
+  margin-left: 10px;
+  width: 150px;
+}
+
+.clear-btn {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+  background-color: #c0392b;
+}
 
 
